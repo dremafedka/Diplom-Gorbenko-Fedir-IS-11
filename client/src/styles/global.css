@@ -1,0 +1,210 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
+  padding: 10px 0;
+  border-top: 1px solid #ddd;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  border-radius: 10px;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1003;
+}
+
+.modal-content {
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 90%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.modal-content.success-modal {
+  background-color: #dff0d8;
+  border: 2px solid #3c763d;
+}
+.modal-content.success-modal button {
+  background-color: #5cb85c;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  margin-top: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.modal-content.success-modal button:hover {
+  background-color: #4cae4c;
+}
+
+.modal-content.info-modal {
+  background-color: #fff;
+  border: 2px solid #f0ad4e;
+}
+.modal-content.info-modal button.ok-btn {
+  background-color: #5cb85c;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  margin-top: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.modal-content.info-modal button.ok-btn:hover {
+  background-color: #4cae4c;
+}
+.modal-content.info-modal button.edit-btn {
+  background-color: #f0ad4e;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  margin-top: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.modal-content.info-modal button.edit-btn:hover {
+  background-color: #ec971f;
+}
+
+.modal-content.confirm-modal {
+  background-color: #f8d7da;
+  border: 2px solid #dc3545;
+}
+.modal-content.confirm-modal p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: #721c24;
+}
+.modal-content.confirm-modal .modal-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+.modal-content.confirm-modal .modal-buttons button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+.modal-content.confirm-modal .modal-buttons .confirm-btn {
+  background-color: #dc3545;
+  color: #fff;
+}
+.modal-content.confirm-modal .modal-buttons .confirm-btn:hover {
+  background-color: #c82333;
+}
+.modal-content.confirm-modal .modal-buttons .cancel-btn {
+  background-color: #6c757d;
+  color: #fff;
+}
+.modal-content.confirm-modal .modal-buttons .cancel-btn:hover {
+  background-color: #5a6268;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+
+
+/* для edit‑модалки ховаємо усі верхньорівневі <button> (це і є той default OK) */
+.modal-content.edit-modal > button {
+  display: none !important;
+}
+
+/* якщо у Modal кнопка має клас ok-btn, на всякий випадок: */
+.modal-content.edit-modal .ok-btn {
+  display: none !important;
+}
+
+
+/* Error Modal: для помилок (світло-рожевий фон, червона обведення та кнопка) */
+.modal-content.error-modal {
+  background-color: #f8d7da;   /* світло-рожевий фон */
+  border: 2px solid #f44336;   /* яскравий червоний контур */
+  max-width: 90%;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* контент зверху, кнопка знизу */
+  padding: 20px;
+}
+
+/* Кнопка в модалці помилки */
+.modal-content.error-modal button {
+  background-color: #4caf50;   /* зелена кнопка */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 20px auto 0;         /* відступ зверху і центр по горизонталі */
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content.error-modal button:hover {
+  background-color: #43a047;   /* трохи темніший зелений при ховері */
+}
+
+/* Якщо хочете додати заголовок */
+.modal-content.error-modal h2 {
+  color: #b71c1c;              /* темно-червоний заголовок */
+  margin-bottom: 12px;
+}

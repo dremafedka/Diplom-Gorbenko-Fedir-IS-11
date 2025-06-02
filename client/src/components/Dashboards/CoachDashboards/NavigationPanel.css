@@ -1,0 +1,71 @@
+.navigation-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 84px;
+  padding: 0 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  border-bottom: 2px solid #dddddd;
+  border-radius: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+
+
+.tabs {
+  display: flex;
+  gap: 16px;
+}
+
+.tab {
+  background: none;
+  border: none;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #555555;
+  border-radius: 4px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.tab:hover {
+  background-color: #f0f0f0;
+}
+
+.tab.active {
+  background-color: #4caf50;
+  color: #ffffff;
+}
+
+.logout-btn {
+  background: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.logout-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.logout-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: #555555;
+  transition: fill 0.2s;
+}
+.logout-btn:hover svg {
+  fill: #555555;
+}
+
+.logout-btn:focus {
+  outline: none;
+}
