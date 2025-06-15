@@ -4,11 +4,6 @@
   min-height: 100vh;
 }
 
-
-/* ==== ФОРМА СТВОРЕННЯ ==== */
-
-
-
 .form-wrapper {
   background: #fff;
   border: 1px solid #ddd;
@@ -81,13 +76,11 @@
 
 .submit-btn:hover { background: #3e8e41; }
 
-/* ==== СЕКЦІЯ “ВАШІ ТРЕНУВАННЯ” ==== */
 .registered-trainings-section {
   background: transparent;
   border: none;
   padding: 0;
   box-shadow: none;
-  /* або просто видаліть цей селектор повністю */
 }
 
 .registered-trainings-section h2 {
@@ -97,8 +90,6 @@
   text-align: center;
 }
 
-
-/* Сітка карток */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
@@ -106,7 +97,6 @@
   margin-top: 20px;
 }
 
-/* Одна картка */
 .training-card {
   display: flex;
   flex-direction: column;
@@ -185,11 +175,9 @@
   background: #c0392b;
 }
 
-
-/* ==== НОВА СЕКЦІЯ “Мій Профіль” ==== */
 .profile-section {
-  width: 90%;          /* нова ширина */
-  max-width: 900px;    /* збільшили максимальну ширину */
+  width: 90%;
+  max-width: 900px;
   margin: 30px auto;
   background: #fff;
   border: 1px solid #ddd;
@@ -272,7 +260,6 @@
   margin-top: 6px;
 }
 
-/* ==== Форма зміни пароля ==== */
 .password-form {
   margin-top: 16px;
 }
@@ -288,8 +275,6 @@
   border-radius: 5px;
 }
 
-
-/* ==== AVATAR STYLING ==== */
 .avatar-preview,
 .avatar-display {
   width: 100px;
